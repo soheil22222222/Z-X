@@ -247,8 +247,7 @@ topkecleon
 Vamptacus
 
 Our channels
-@teleseedch [English]
-@iranseed [persian]
+[persian]
 ]],
     help_text_realm = [[
 Realm Commands:
