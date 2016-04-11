@@ -4,7 +4,7 @@ package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 
 require("./bot/utils")
 
-VERSION = '2'
+VERSION = '3'
 
 -- This function is called when tg receive a msg
 function on_msg_receive (msg)
@@ -208,227 +208,228 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "onservice",
-    "inrealm",
+    "SUDO",
+    "addplug",
+    "admin",
+    "all",
+    "anti_spam",
+    "banhammer",
+    "broadcast",
+    "calc",
+    "chat",
+    "download_media",
+    "echo",
+    "feedback",
+    "filterword",
+    "get",
+    "img2sticker",
+    "info",
     "ingroup",
     "inpm",
-    "banhammer",
-    "stats",
-    "anti_spam",
-    "owners",
-    "arabic_lock",
-    "set",
-    "get",
-    "broadcast",
-    "download_media",
+    "inrealm",
+    "insudo",
     "invite",
-    "all",
+    "help_fa",
+    "isup",
     "leave_ban",
-    "admin"
+    "lock_badw",
+    "lock_english",
+    "lock_join",
+    "lock_link",
+    "lock_media",
+    "lock_share",
+    "map",
+    "media",
+    "mywai",
+    "owners",
+    "plugins",
+    "s2a",
+    "say",
+    "send",
+    "set",
+    "share",
+    "spammer",
+    "stats",
+    "telesticker",
+    "text",
+    "time",
+    "webshot",
+    "welcome"
     },
-    sudo_users = {206317935},--Sudo users
+    sudo_users = {122774063},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v2 - Open Source
-An advance Administration bot based on yagop/telegram-bot 
-
-https://github.com/SEEDTEAM/TeleSeed
-
-Admins
-@iwals [Founder]
-@imandaneshi [Developer]
-@Rondoozle [Developer]
-@seyedan25 [Manager]
-
-Special thanks to
-awkward_potato
-Siyanew
-topkecleon
-Vamptacus
-
-Our channels
-[persian]
+    about_text = [[Sbss Bot V3
+    An Advanced Anti Spam Bot Forked On TeleSeed
+    
+    Develpoed By:
+    @Mr_Ah_S
+    
+    Special Thanks To:
+    Mehr Pouya
+    Arman
+    IM/-\N
+    Creed Is Dead
+    
+    Powered By @Sbss_Team
+    
+    #Open Source
+    https://github.com/SbssTeam/Sbss
 ]],
     help_text_realm = [[
-Realm Commands:
+See Patterns In Github
+]],
+    help_fa_text = [[
+دستورات فارسی ربات:
 
-!creategroup [Name]
-Create a group
+1- اداره اعضا
+اخراج {یوزرنیم/ریپلای}
+اخراج فرد از گروه
+بن {یوزرنیم/ریپلای}
+بن کردن فرد
+حذف بن {یوزرنیم}
+آن بن کردن فرد
+ایدی {ریپلای/معمولی}
+نمایش ایدی
 
-!createrealm [Name]
-Create a realm
+2- اداره گروه
+تنظیم قوانین {متن}
+تنظیم متن به عنوان قوانین گروه
+قوانین
+نمایش قوانین گروه
+تنظیم توضیحات  {متن}
+تنظیم یک متن به عنوان توضیحات
+توضیحات
+دریافت توضیحات
+تنظیم نام {نام}
+تنظیم نام گروه
+تنظیم عکس
+تنظیم عکس گروه
+ترفیع {ریپلای/یوزرنیم}
+ترفیع مدیر جدید
+تنزل {ریپلای/یوزرنیم}
+تنزل یک مدیر
+پاک کردن {مدیران/توضیحات/قوانین}
+پاک کردن هریک از این ها
+قفل {نام/اعضا/اسپم/لینک/تگ/فحش/اینگلیسی/ورود/رسانه/اشتراک گذاری }
+قفل کردن هریک از اینها
+بازکردن  {نام/عکس/اعضا/اسپم/لینک/تگ/فحش/اینگلیسی/ورود/رسانه/اشتراک گذاری}
+بازکردن هریک از اینها
+لیست مدیران
+نمایش لیست مدیر ها
+دارنده {ریپلای/ایدی}
+تنظیم فرد به عنوان صاحب گروه
+حساسیت {عدد}
+نتنظیم حساسیت به اسپم
+تنظیمات 
+نمایش تنظیمات گروه
+اینفو {یوزرنیم/ریپلای/معمولی}
+نمایش مشخصات
+ 
+3- ابزار ها
+محاسبه {فرمول}
+محاسبه یک فرمول ریاضی
+به {نام} بگو {متن}
+گفتن یک متن به یک نام
+بگو {متن}
+تکرار یک متن
+زمان {شهر}
+نشان دادن زمان در یک شهر
+تبدیل {متن}
+تبدیل یک متن به عکس
+تصویر {آدرس}
+تصویر یک سایت
+تگ {متن}
+تگ کردن همه افراد گروه و ارسال یک متن (فقط مدیران)
 
-!setname [Name]
-Set realm name
+4- فیلترینگ
+فیلتر + {کلمه}
+فیلتر کردن یک کلمه
+فیلتر – {کلمه)
+حذف فیلتر یک کلمه
+لیست فیلتر
+لیست کلمات فیلتر شده
 
-!setabout [GroupID] [Text]
-Set a group's about text
-
-!setrules [GroupID] [Text]
-Set a group's rules
-
-!lock [GroupID] [setting]
-Lock a group's setting
-
-!unlock [GroupID] [setting]
-Unock a group's setting
-
-!wholist
-Get a list of members in group/realm
-
-!who
-Get a file of members in group/realm
-
-!type
-Get group type
-
-!kill chat [GroupID]
-Kick all memebers and delete group
-
-!kill realm [RealmID]
-Kick all members and delete realm
-
-!addadmin [id|username]
-Promote an admin by id OR username *Sudo only
-
-!removeadmin [id|username]
-Demote an admin by id OR username *Sudo only
-
-!list groups
-Get a list of all groups
-
-!list realms
-Get a list of all realms
-
-!log
-Grt a logfile of current group or realm
-
-!broadcast [text]
-!broadcast Hello !
-Send text to all groups
-Only sudo users can run this command
-
-!bc [group_id] [text]
-!bc 123456789 Hello !
-This command will send text to [group_id]
-
-
-**U can use both "/" and "!" 
-
-
-*Only admins and sudo can add bots in group
-
-
-*Only admins and sudo can use kick,ban,unban,newlink,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-*Only admins and sudo can use res, setowner, commands
 ]],
     help_text = [[
-Commands list :
+    English Commands:
 
-!kick [username|id]
-You can also do it by reply
+1- Member managing:
+/kick [reply/username]
+Kick a Member
+/ban [reply/username]
+Ban a Member
+/unban [username]
+Unban a Member
+/id [reply/none]
+Get Group or Member id
 
-!ban [ username|id]
-You can also do it by reply
+2- Group Managing:
+/set rules [Text]
+Set a Text for Group Rules
+/rules
+Returns Group Rules
+/set about [Text]
+Set a Text for Group Description
+/about
+Returns Group Description
+/setname [name]
+Set Group Name
+/setphoto
+Set a Photo for Group
+/promote [reply/username]
+Promote a New Moderator
+/demote [reply/username]
+Demote a Moderator
+/clean [rules/about/modlist]
+Clean each of them
+/lock [name/ member/flood/link/tag/badw/English/join/media/share]
+Lock each of them
+/unlock [name/photo/member/flood/link/tag/badw/English/join/media/share]
+Unlock each of them
+/modlist
+Group mods list
+/setleader [reply/id]
+Set group leader
+/setflood [number]
+Set group flood
+/settings
+Shows group settings
+/info [reply/username/none]
+Returns user info
 
-!unban [id]
-You can also do it by reply
+3- Tools:
+!calc [formula]
+Calculate a formula
+!echo [text]
+Echo a text
+!tophoto
+Convert a sticker to a photo (mods only)
+!tosticker
+Convert a photo to sticker
+!say [msg] to [name]
+Says a massage to a name
+!time [city]
+Sows time of a city
+!t2i [text]
+Convert a text to an image
+!web [url]
+Gets a web shot from a url
+!tagall [text]
+Tags all of the members and returns text (mods only)
 
-!who
-Members list
-
-!modlist
-Moderators list
-
-!promote [username]
-Promote someone
-
-!demote [username]
-Demote someone
-
-!kickme
-Will kick user
-
-!about
-Group description
-
-!setphoto
-Set and locks group photo
-
-!setname [name]
-Set group name
-
-!rules
-Group rules
-
-!id
-return group id or user id
-
-!help
-
-!lock [member|name|bots|leave]	
-Locks [member|name|bots|leaveing] 
-
-!unlock [member|name|bots|leave]
-Unlocks [member|name|bots|leaving]
-
-!set rules <text>
-Set <text> as rules
-
-!set about <text>
-Set <text> as about
-
-!settings
-Returns group settings
-
-!newlink
-create/revoke your group link
-
-!link
-returns group link
-
-!owner
-returns group owner id
-
-!setowner [id]
-Will set id as owner
-
-!setflood [value]
-Set [value] as flood sensitivity
-
-!stats
-Simple message statistics
-
-!save [value] <text>
-Save <text> as [value]
-
-!get [value]
-Returns text of [value]
-
-!clean [modlist|rules|about]
-Will clear [modlist|rules|about] and set it to nil
-
-!res [username]
-returns user id
-"!res @username"
-
-!log
-will return group logs
-
-!banlist
-will return group ban list
-
-**U can use both "/" and "!" 
-
-
-*Only owner and mods can add bots in group
-
-
-*Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-*Only owner can use res,setowner,promote,demote and log commands
-
+4- Filtering:
+/filter + [word]
+Filter a word
+/filter – [word]
+Un Filter a word
+/filterlist
+List of filtered words
+____________
+Send /share to get robot number
+____________
+You can use [ ! , / or # ]or don’t use them
+More Details on @Sbss_Team
 ]]
   }
   serialize_to_file(config, './data/config.lua')
